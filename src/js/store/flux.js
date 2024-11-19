@@ -1,45 +1,52 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			url: 'https://www.swapi.tech/api',
+			people: [],
+			single: {},
+			favourites: []
+
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
+			addToFavourite: (item) => {
 				const store = getStore();
+				const newFavourite = [...store.favourites, item];
+				setStore({favourites: newFavourite})
+			},
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+			
+			
+			getData: async(type) =>{
+				try {
+					const store = getStore();
+					const resp = await fetch(store.url+`/${type}`);
+					if (!resp.ok) throw new Error('Error fetching people');
+					const data = await resp.json();
+					setStore({[type]: data.results	})
+				} catch (error) {
+					console.error(error);
+					  
+				}
+			},
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
+			getOne: async(type, uid) =>{
+				try {
+					const store = getStore();
+					const resp = await fetch(store.url+`/${type}/${uid}`);
+					if (!resp.ok) throw new Error('Error fetching people');
+					const data = await resp.json();
+					setStore({single: data.result})
+				} catch (error) {
+					console.error(error);
+					  
+				}
+			},
+
+
+
+			clearSingle: () => setStore({single: {}})
 		}
 	};
 };
-
+ 
 export default getState;
