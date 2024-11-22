@@ -23,6 +23,8 @@ export const Home = () => {
 			img={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
 			/>)}
 
+				
+
 			<h2 className="text-warning">Planets</h2> 
 			{store.planets?.map(planet => <GeneralCard
 			key={planet.uid}  

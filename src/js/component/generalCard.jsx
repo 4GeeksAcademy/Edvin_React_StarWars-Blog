@@ -13,16 +13,16 @@ export const GeneralCard = (props) => {
     
 
     return(
-        <div className="card col-sm-6 col-md-4 col-lg-3">
+        <div className="card col-sm-6 col-md-4 col-lg-3 bg-dark">
             <figure>
                  <img className="card-img-top" src={props.img} alt={props.name} />
                  <figcaption>{props.name}</figcaption>
             </figure>
             <div className="d-flex">
-                <button onClick={handleLink}>
+                <button className="rounded bg-primary m-1" onClick={handleLink}>
                     Learn More
                 </button>
-                <button>
+                <button className="rounded bg-warning m-1">
                     Favourite
                 </button>
             </div>
