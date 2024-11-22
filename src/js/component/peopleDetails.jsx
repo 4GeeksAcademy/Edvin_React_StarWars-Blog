@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
+
 
 export const PeopleDetails = (props) => {
-
-const {action, store} = useContext(Context);
 
     return (
        <div className="container">

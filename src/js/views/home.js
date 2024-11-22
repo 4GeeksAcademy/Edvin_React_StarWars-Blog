@@ -14,7 +14,7 @@ export const Home = () => {
 		<div className="text-center mt-5">
 			<div className="row">
 
-			<h2>People</h2>
+			<h2 className="text-warning">People</h2>
 			{store.people?.map(person => <GeneralCard
 			key={person.uid}  
 			uid={person.uid}
@@ -23,7 +23,7 @@ export const Home = () => {
 			img={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
 			/>)}
 
-			<h2>Planets</h2> 
+			<h2 className="text-warning">Planets</h2> 
 			{store.planets?.map(planet => <GeneralCard
 			key={planet.uid}  
 			uid={planet.uid}
@@ -32,27 +32,16 @@ export const Home = () => {
 			img={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}
 			/>)}
 			
-			<h2>Vehicles</h2> 
+			<h2 className="text-warning">Vehicles</h2> 
 			{store.vehicles?.map(vehicle => <GeneralCard
-			key={vehicle.uid}  
+			key={vehicle.uid} 
 			uid={vehicle.uid}
 			name={vehicle.name}
 			type={'vehicles'}
 			img={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`}
 			/>)}
 
-			<h2>Starships</h2> 
-			{store.starships?.map(starship => <GeneralCard
-			key={starship.uid}  
-			uid={starship.uid}
-			name={starship.name}
-			type={'starships'}
-			img={`https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`}
-			/>)}
-
 			
-			
-
 			</div>
 	
 		</div>

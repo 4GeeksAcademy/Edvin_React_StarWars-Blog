@@ -3,6 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			url: 'https://www.swapi.tech/api',
 			people: [],
+			planets: [],
+			vehicles:[],
 			single: {},
 			favourites: []
 

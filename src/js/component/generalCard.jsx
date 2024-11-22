@@ -1,9 +1,7 @@
-import React, {useContext}from "react";
-import {Context} from "../store/appContext"
+import React from "react";
 import { useNavigate } from "react-router";
 
 export const GeneralCard = (props) => {
-    const {store, actions} = useContext(Context);
 
     const navigate = useNavigate();
    
@@ -11,8 +9,8 @@ export const GeneralCard = (props) => {
         navigate(`/details/${props.type}/${props.uid}`)
     }
 
-    const {state} =  
-    }
+
+    
 
     return(
         <div className="card col-sm-6 col-md-4 col-lg-3">

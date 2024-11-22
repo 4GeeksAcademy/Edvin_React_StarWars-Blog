@@ -1,6 +1,6 @@
 import React from "react";
 
-export const PlanetDetails = (props) => {
+export const VehicleDetails = (props) => {
 
     return(
         <div className="container">
@@ -12,10 +12,11 @@ export const PlanetDetails = (props) => {
                 </figcaption>
             </figure>
             <div>
-                <p>population: {props.population} </p>
-                <p>diameter: {props.diameter} </p>
-                <p>terrain: {props.terrain}</p>
-                <p>climate: {props.climate}</p>
+                <p>model: {props.model} </p>
+                <p>class: {props.class} </p>
+                <p>speed: {props.speed} </p>
+                <p>size: {props.size} </p>
+                <p>cost: {props.cost} </p>
                
             </div>
         </div>

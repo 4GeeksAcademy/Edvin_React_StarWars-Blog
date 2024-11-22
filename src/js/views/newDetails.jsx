@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { PeopleDetails } from "../component/peopleDetails.jsx";
 import { Context } from "../store/appContext.js";
-import {PlanetsDetails} from "../"
+import {PlanetDetails} from "../component/planetDetails.jsx"
+import { VehicleDetails } from "../component/vehicleDetails.jsx";
 
 export const NewDetails = () => {
     
@@ -26,19 +27,27 @@ export const NewDetails = () => {
         />
     }
             
-        {type === 'planets' && <PlanetsDetails
+        {type === 'planets' && <PlanetDetails
             name={store.single?.properties?.name}
             img={`https://starwars-visualguide.com/assets/img/planets/${uid}.jpg`}
-            height={store.single?.properties?.height}
-            mass={store.single?.properties?.mass}
+            population={store.single?.properties?.population}
+            climate={store.single?.properties?.climate}
+            diameter={store.single?.properties?.diameter}
+            terrain={store.single?.properties?.terrain}
+
+
             
         />}
 
-        {type === 'vehicles' && <VehiclesDetails
+        {type === 'vehicles' && <VehicleDetails
             name={store.single?.properties?.name}
             img={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`}
-            height={store.single?.properties?.height}
-            mass={store.single?.properties?.mass}
+            model={store.single?.properties?.model}
+            size={store.single?.properties?.size}
+            class={store.single?.properties?.class}
+            cost={store.single?.properties?.cost}
+            speed={store.single?.properties?.speed}
+
             
         />}
 
