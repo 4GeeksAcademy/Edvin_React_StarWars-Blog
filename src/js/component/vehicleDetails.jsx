@@ -13,10 +13,10 @@ export const VehicleDetails = (props) => {
             </figure>
             <div className="text-light mt-5">
                 <p>model: {props.model} </p>
-                <p>class: {props.class} </p>
-                <p>speed: {props.speed} </p>
-                <p>size: {props.size} </p>
-                <p>cost: {props.cost} </p>
+                <p>vehicle class: {props.vehicle_class} </p>
+                <p>length: {props.length} </p>
+                <p>crew: {props.crew} </p>
+                <p>max atmosphering speed: {props.max_atmosphering_speed} </p>
                
             </div>
         </div>

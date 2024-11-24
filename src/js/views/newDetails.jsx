@@ -43,10 +43,10 @@ export const NewDetails = () => {
             name={store.single?.properties?.name}
             img={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`}
             model={store.single?.properties?.model}
-            size={store.single?.properties?.size}
-            class={store.single?.properties?.class}
-            cost={store.single?.properties?.cost}
-            speed={store.single?.properties?.speed}
+            vehicle_class={store.single?.properties?.vehicle_class}
+            length={store.single?.properties?.length}
+            crew={store.single?.properties?.crew}
+            max_atmosphering_speed={store.single?.properties?.max_atmosphering_speed}
 
             
         />}
